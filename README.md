@@ -25,3 +25,42 @@ cd phishing-email-detector
 # Install dependencies
 pip install -r requirements.txt
 
+python phishing_detector.py
+
+Example Output
+
+Generating synthetic dataset...
+Dataset shape: (1500, 2)
+Class distribution:
+0    900
+1    600
+Name: label, dtype: int64
+Training Random Forest...
+
+==================================================
+MODEL EVALUATION
+==================================================
+Accuracy: 0.9567
+
+Confusion Matrix:
+[[176   4]
+ [  9 111]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        Safe       0.95      0.98      0.96       180
+    Phishing       0.97      0.93      0.95       120
+
+    accuracy                           0.96       300
+   macro avg       0.96      0.95      0.96       300
+weighted avg       0.96      0.96      0.96       300
+
+Top 10 Features:
+1. suspicious_count: 0.3124
+2. url_count: 0.2156
+3. click: 0.1452
+4. account: 0.1021
+5. verify: 0.0876
+...
+
